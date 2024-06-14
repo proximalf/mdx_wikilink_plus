@@ -197,7 +197,7 @@ class WikiLinkPlusPattern(markdown.inlinepatterns.Pattern):
         url_case = self.config['url_case'][0]
         html_class = self.config['html_class'][0]
         image_class = self.config['image_class'][0]
-        if hasattr(self.md, 'Meta'):
+        if hasattr(self.md, 'Meta') and self.md.Meta is not None:
             if 'wiki_base_url' in self.md.Meta:
                 base_url = self.md.Meta['wiki_base_url'][0]
             if 'wiki_end_url' in self.md.Meta:
